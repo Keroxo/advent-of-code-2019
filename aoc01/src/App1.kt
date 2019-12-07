@@ -3,7 +3,7 @@ import java.util.stream.IntStream
 
 fun main(args: Array<String>) {
     val weights = readInput(args[0])
-    val requiredFuel = requiredFuel(weights)
+    val requiredFuel = requiredFuelForModule(weights).sum()
     print("Fuel required:  $requiredFuel")
 }
 
@@ -15,13 +15,12 @@ fun readInput(fileName: String): IntStream {
         .mapToInt { it.toInt() }
 }
 
-fun requiredFuel(stream: IntStream): Int {
+fun requiredFuelForModule(stream: IntStream): IntStream {
     return stream
-        .map { requiredFuel(it) }
-        .sum()
+        .map { requiredFuelForModule(it) }
 }
 
-fun requiredFuel(mass: Int): Int {
+fun requiredFuelForModule(mass: Int): Int {
     val a = mass / 3
     return a - 2
 }
