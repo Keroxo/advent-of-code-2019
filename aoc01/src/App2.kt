@@ -12,7 +12,6 @@ fun main(args: Array<String>) {
 fun requiredFuelForFuel(stream: IntStream): IntStream {
     return stream
         .map { requiredFuelForFuel(it) }
-
 }
 
 fun requiredFuelForFuel(fuel: Int): Int {
