@@ -2,7 +2,6 @@ import java.io.File
 import kotlin.streams.toList
 
 fun main(args: Array<String>) {
-
     val input = getInput(args[0])
     println(input)
     operate(input)
